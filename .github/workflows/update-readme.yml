@@ -3,7 +3,10 @@ name: Atualizar gráfico de linguagens
 on:
   schedule:
     - cron: "0 0 * * 0"   # roda todo domingo
-  workflow_dispatch:       # permite rodar manualmente
+  workflow_dispatch:
+
+permissions:
+  contents: write   # permite commit no repositório
 
 jobs:
   build:
@@ -16,12 +19,15 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "3.10"
 
       - name: Instalar dependências
-        run: pip install matplotlib requests
+        run: |
+          pip install matplotlib requests
 
       - name: Gerar gráfico
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python linguagens.py
 
       - name: Commit e push
@@ -29,5 +35,5 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           git add linguagens.png
-          git commit -m "Atualizar gráfico de linguagens"
+          git commit -m "Atualizar gráfico de linguagens" || echo "Nada para commitar"
           git push
