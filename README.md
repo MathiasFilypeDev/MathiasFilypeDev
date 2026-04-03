@@ -34,11 +34,8 @@
 
 ###
 
-<!-- LANG-STATS-START -->
-🚀 Carregando estatísticas...
-<!-- LANG-STATS-END -->
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=MathiasFilypeDev/MathiasFilypeDev&layout=compact&theme=radical)
+<h3>Ranking de linguagens📊</h3>
+![Gráfico de linguagens](linguagens.png)
 
 ###
 
