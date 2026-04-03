@@ -2,7 +2,7 @@ name: Atualizar gráfico de linguagens
 
 on:
   schedule:
-    - cron: "0 0 * * 0"
+    - cron: "0 0 * * 0"   # roda todo domingo
   workflow_dispatch:
 
 permissions:
@@ -16,18 +16,28 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      # Primeiro tenta rodar em Python
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
-      - name: Instalar dependências
+      - name: Instalar dependências Python
         run: pip install matplotlib requests
 
-      - name: Gerar gráfico
+      - name: Gerar gráfico (Python)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python linguagens.py
+        run: python linguagens.py || echo "Python falhou, tentando Node.js..."
+
+      # Se Python falhar, roda Node.js
+      - name: Instalar dependências Node
+        run: npm install chartjs-node-canvas node-fetch
+
+      - name: Gerar gráfico (Node)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/analyze.js || echo "Node.js também falhou"
 
       - name: Commit e push
         run: |
