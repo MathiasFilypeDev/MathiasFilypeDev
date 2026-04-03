@@ -1,19 +1,22 @@
 import requests
 import matplotlib.pyplot as plt
 from collections import Counter
+import os
 
-usuario = "Antonio"  # seu usuário GitHub
+usuario = "Antonio"
+token = os.getenv("GITHUB_TOKEN")
+headers = {"Authorization": f"token {token}"} if token else {}
+
 url = f"https://api.github.com/users/{usuario}/repos"
+repos = requests.get(url, headers=headers).json()
 
-repos = requests.get(url).json()
 linguagens = Counter()
 
 for repo in repos:
     lang_url = repo["languages_url"]
-    langs = requests.get(lang_url).json()
+    langs = requests.get(lang_url, headers=headers).json()
     linguagens.update(langs)
 
-# Gerar gráfico
 plt.figure(figsize=(10,6))
 plt.bar(linguagens.keys(), linguagens.values(), color="skyblue")
 plt.xlabel("Linguagens")
