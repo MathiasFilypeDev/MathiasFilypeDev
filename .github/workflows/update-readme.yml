@@ -2,11 +2,11 @@ name: Atualizar gráfico de linguagens
 
 on:
   schedule:
-    - cron: "0 0 * * 0"   # roda todo domingo
+    - cron: "0 0 * * 0"
   workflow_dispatch:
 
 permissions:
-  contents: write   # permite commit no repositório
+  contents: write
 
 jobs:
   build:
@@ -22,8 +22,7 @@ jobs:
           python-version: "3.10"
 
       - name: Instalar dependências
-        run: |
-          pip install matplotlib requests
+        run: pip install matplotlib requests
 
       - name: Gerar gráfico
         env:
