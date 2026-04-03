@@ -34,7 +34,11 @@
 
 ###
 
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=MathiasFilypeDev&layout=compact&theme=radical)
 
+###
+
+<h3>Gráficos de desempenho:</h3>
 <div align="center">
   <img src="https://streak-stats.demolab.com?user=mathiasfilypedev&locale=en&mode=daily&theme=dracula&hide_border=false&border_radius=5&order=3" height="200" alt="streak graph" /> <br>
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=mathiasfilypedev&radius=16&theme=dracula&area=true&order=5" height="300" alt="activity-graph graph"  />
