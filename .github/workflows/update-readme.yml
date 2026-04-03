@@ -9,8 +9,7 @@ permissions:
   contents: write          # permite commit no repositório
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # força uso do Node.js 24
-
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 jobs:
   update-readme:
     runs-on: ubuntu-latest
