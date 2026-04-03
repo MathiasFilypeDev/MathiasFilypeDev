@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const fs = require("fs");
 
-const username = process.env.GITHUB_USERNAME;
+const username = "MathiasFilypeDev";
 
 async function getLanguages() {
   const reposRes = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
@@ -27,15 +27,15 @@ function generateMarkdown(langStats) {
   const total = Object.values(langStats).reduce((a, b) => a + b, 0);
 
   let md = "## 📊 Linguagens mais usadas (Atualizado automaticamente)\n\n";
-  md += "| Linguagem | Uso (%) | Barra |\n";
-  md += "|----------|---------|-------|\n";
+  md += "| Linguagem | Uso (%) | Nível |\n";
+  md += "|----------|---------|--------|\n";
 
   const sorted = Object.entries(langStats).sort((a, b) => b[1] - a[1]);
 
   for (const [lang, bytes] of sorted.slice(0, 10)) {
     const percent = ((bytes / total) * 100).toFixed(2);
-    const bar = "█".repeat(Math.round(percent / 5));
-    md += `| ${lang} | ${percent}% | ${bar} |\n`;
+    const level = "█".repeat(Math.round(percent / 5));
+    md += `| ${lang} | ${percent}% | ${level} |\n`;
   }
 
   return md;
