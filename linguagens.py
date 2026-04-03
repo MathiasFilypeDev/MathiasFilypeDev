@@ -1,4 +1,5 @@
 import requests
+import matplotlib.pyplot as plt
 from collections import Counter
 import os
 
@@ -16,9 +17,17 @@ for repo in repos:
     langs = requests.get(lang_url, headers=headers).json()
     linguagens.update(langs)
 
-# Descobrir a linguagem mais usada
+# Se houver linguagens, gera gráfico com todas
 if linguagens:
-    linguagem_top = max(linguagens, key=linguagens.get)
-    print(f"A linguagem mais usada nos seus repositórios é: {linguagem_top}")
+    plt.figure(figsize=(10,4))  # largura 10, altura 4 (mais baixo)
+    plt.bar(linguagens.keys(), linguagens.values(), color="skyblue")
+    plt.xlabel("Linguagens")
+    plt.ylabel("Bytes de código")
+    plt.title("Linguagens mais usadas nos meus repositórios")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig("linguagens.png")
+
+    print("Gráfico atualizado com todas as linguagens mais usadas.")
 else:
     print("Não foi possível encontrar linguagens nos repositórios.")
