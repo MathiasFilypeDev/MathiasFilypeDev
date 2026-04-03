@@ -1,9 +1,9 @@
 name: Update README Languages
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
-  workflow_dispatch:
 
 jobs:
   update:
@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Run script
         run: node scripts/analyze.js
@@ -26,5 +26,5 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           git add README.md
-          git commit -m "🤖 Atualizando linguagens automaticamente" || echo "Sem mudanças"
+          git commit -m "🤖 Atualizando linguagens" || echo "Sem mudanças"
           git push
