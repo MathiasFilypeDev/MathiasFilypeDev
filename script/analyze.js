@@ -1,4 +1,3 @@
-const fetch = require("node-fetch");
 const fs = require("fs");
 
 const username = "MathiasFilypeDev";
@@ -26,7 +25,7 @@ async function getLanguages() {
 function generateMarkdown(langStats) {
   const total = Object.values(langStats).reduce((a, b) => a + b, 0);
 
-  let md = "## 📊 Linguagens mais usadas (Atualizado automaticamente)\n\n";
+  let md = "## 📊 Linguagens mais usadas\n\n";
   md += "| Linguagem | Uso (%) | Nível |\n";
   md += "|----------|---------|--------|\n";
 
@@ -34,23 +33,30 @@ function generateMarkdown(langStats) {
 
   for (const [lang, bytes] of sorted.slice(0, 10)) {
     const percent = ((bytes / total) * 100).toFixed(2);
-    const level = "█".repeat(Math.round(percent / 5));
-    md += `| ${lang} | ${percent}% | ${level} |\n`;
+    const bar = "█".repeat(Math.round(percent / 5));
+    md += `| ${lang} | ${percent}% | ${bar} |\n`;
   }
 
   return md;
 }
 
 (async () => {
-  const stats = await getLanguages();
-  const markdown = generateMarkdown(stats);
+  try {
+    const stats = await getLanguages();
+    const markdown = generateMarkdown(stats);
 
-  const readme = fs.readFileSync("README.md", "utf-8");
+    const readme = fs.readFileSync("README.md", "utf-8");
 
-  const newReadme = readme.replace(
-    /<!-- LANG-STATS-START -->([\s\S]*?)<!-- LANG-STATS-END -->/,
-    `<!-- LANG-STATS-START -->\n${markdown}\n<!-- LANG-STATS-END -->`
-  );
+    const newReadme = readme.replace(
+      /<!-- LANG-STATS-START -->([\s\S]*?)<!-- LANG-STATS-END -->/,
+      `<!-- LANG-STATS-START -->\n${markdown}\n<!-- LANG-STATS-END -->`
+    );
 
-  fs.writeFileSync("README.md", newReadme);
+    fs.writeFileSync("README.md", newReadme);
+
+    console.log("✅ README atualizado com sucesso!");
+  } catch (err) {
+    console.error("❌ Erro:", err);
+    process.exit(1);
+  }
 })();
