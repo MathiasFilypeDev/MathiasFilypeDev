@@ -33,10 +33,7 @@ jobs:
         run: python linguagens.py
 
       - name: Commit e push
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add linguagens.png
-          git commit -m "Atualizar gráfico de linguagens" || echo "Nada para commitar"
-          git pull --rebase origin master || echo "Nada para atualizar"
-          git push
+        uses: ad-m/github-push-action@v0.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
