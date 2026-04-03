@@ -8,16 +8,19 @@ on:
 permissions:
   contents: write          # permite commit no repositório
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # força uso do Node.js 24
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4   # versão atualizada
+        uses: actions/checkout@v4   # atualizado para Node.js 24
 
       - name: Configurar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5   # atualizado para Node.js 24
         with:
           python-version: "3.10"
 
