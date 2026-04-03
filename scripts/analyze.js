@@ -7,7 +7,7 @@ const height = 600;
 const chartJSNodeCanvas = new ChartJSNodeCanvas({ width, height });
 
 async function main() {
-  const usuario = "Antonio";
+  const usuario = "Antonio"; // seu usuário GitHub
   const token = process.env.GITHUB_TOKEN;
   const headers = token ? { Authorization: `token ${token}` } : {};
 
