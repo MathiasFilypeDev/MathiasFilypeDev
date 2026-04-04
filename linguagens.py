@@ -17,7 +17,7 @@ for repo in repos:
     langs = requests.get(lang_url, headers=headers).json()
     linguagens.update(langs)
 
-# Lista das linguagens/ferramentas que você realmente usa
+# Defina aqui as linguagens/ferramentas que você realmente usa
 linguagens_trabalhadas = {
     "Python", "JavaScript", "C#", "C++", "HTML", "CSS", "TypeScript"
 }
@@ -27,10 +27,13 @@ linguagens_filtradas = {
     lang: bytes for lang, bytes in linguagens.items() if lang in linguagens_trabalhadas
 }
 
+# Ordenar da mais usada para a menos usada
+linguagens_ordenadas = dict(sorted(linguagens_filtradas.items(), key=lambda x: x[1], reverse=True))
+
 # Gráfico mais baixo e só com as linguagens filtradas
-if linguagens_filtradas:
+if linguagens_ordenadas:
     plt.figure(figsize=(10,4))  # largura 10, altura 4
-    plt.bar(linguagens_filtradas.keys(), linguagens_filtradas.values(), color="skyblue")
+    plt.bar(linguagens_ordenadas.keys(), linguagens_ordenadas.values(), color="skyblue")
     plt.xlabel("Linguagens")
     plt.ylabel("Bytes de código")
     plt.title("Linguagens que utilizo nos meus repositórios")
