@@ -26,36 +26,31 @@ linguagens_filtradas = {lang: bytes for lang, bytes in linguagens.items() if lan
 linguagens_filtradas["React"] = linguagens_filtradas.get("JavaScript", 0) + linguagens_filtradas.get("TypeScript", 0)
 linguagens_filtradas["PostgreSQL"] = 0  # ajuste manual se quiser somar SQL
 
-# Converter para percentuais e ordenar
-total = sum(linguagens_filtradas.values())
-linguagens_percentuais = {lang: (val/total*100 if total > 0 else 0) for lang, val in linguagens_filtradas.items()}
-linguagens_ordenadas = dict(sorted(linguagens_percentuais.items(), key=lambda x: x[1], reverse=True))
+# Ordenar pela quantidade
+linguagens_ordenadas = dict(sorted(linguagens_filtradas.items(), key=lambda x: x[1], reverse=True))
 
 langs = list(linguagens_ordenadas.keys())
 values = list(linguagens_ordenadas.values())
-colors = plt.cm.Set3(range(len(values)))  # paleta colorida
+colors = plt.cm.Paired(range(len(values)))
 
-# Gráfico de barras com estilo
-fig, ax = plt.subplots(figsize=(8,5))
-bars = ax.bar(langs, [0]*len(values), color=colors, edgecolor="black", linewidth=1.2)
+# Gráfico de barras verticais
+fig, ax = plt.subplots(figsize=(10,6))
+bars = ax.bar(langs, [0]*len(values), color=colors)
 
-ax.set_ylabel("Uso (%)")
+ax.set_ylabel("Bytes de código")
 ax.set_title("Tecnologias que utilizo nos meus repositórios")
+plt.xticks(rotation=0)  # labels bem alinhados embaixo das barras
 
+# Função de animação: cada barra cresce em sequência
 def animate(i):
     for idx, bar in enumerate(bars):
-        progress = min(i/50, 1)
-        bar.set_height(values[idx] * progress)
-        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height()+1,
-                f"{values[idx]:.1f}%", ha='center', va='bottom', fontsize=10, fontweight="bold")
+        if i >= idx*20:  # cada barra começa em um momento diferente
+            progress = min((i-idx*20)/20, 1)
+            bar.set_height(values[idx] * progress)
+            ax.text(bar.get_x() + bar.get_width()/2, bar.get_height()+1000,
+                    f"{values[idx]:,}", ha='center', va='bottom', fontsize=9, fontweight="bold")
 
-ani = animation.FuncAnimation(fig, animate, frames=60, interval=80, repeat=False)
+ani = animation.FuncAnimation(fig, animate, frames=len(values)*30, interval=50, repeat=False)
 ani.save("linguagens.gif", writer="pillow", fps=30)
 
-# Também gerar gráfico de pizza
-fig2, ax2 = plt.subplots(figsize=(6,6))
-ax2.pie(values, labels=langs, autopct='%1.1f%%', colors=colors, startangle=140)
-ax2.set_title("Distribuição das Tecnologias")
-plt.savefig("linguagens_pizza.png")
-
-print("GIF animado gerado em linguagens.gif e gráfico de pizza em linguagens_pizza.png")
+print("GIF animado gerado em linguagens.gif")
