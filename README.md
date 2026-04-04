@@ -1,33 +1,25 @@
-<h1 align="center">Bem vindo ao meu portifólio📚💻⚙️</h1>
+# 👋 Bem-vindo ao meu portfólio 📚💻⚙️
 
-###
+## Sobre mim
+Sou Mathias, desenvolvedor focado em **front-end** e apaixonado por tecnologia.  
+Atualmente estudando **React** e boas práticas de desenvolvimento.
 
-<h3>Social:</h3>
-<div>
-  <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo" title="Mathias Filype" />
-  <img src="https://img.shields.io/static/v1?message=dev.to&logo=dev.to&label=&color=0A0A0A&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="devto logo"  title="User = MathiasFilypeDev"/>
-  <img src="https://img.shields.io/static/v1?message=Medium&logo=medium&label=&color=12100E&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="medium logo"  title="User = MathiasFilypeDev"/>
-  <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="gmail logo"  title="mathias19pjm@gmail.com"/>
-</div>
+---
 
-###
+## 🌐 Social
+[LinkedIn](https://www.linkedin.com/in/mathias-filype-366195246) · [Dev.to](https://dev.to/mathiasfilypedev) · [Medium](https://medium.com/@MathiasFilypeDev) · 📧 mathias19pjm@gmail.com
 
-<div>
-    
-  [Linkedin Profile](www.linkedin.com/in/mathias-filype-366195246) [Dev.to](https://dev.to/mathiasfilypedev) [Medium](https://medium.com/@MathiasFilypeDev)
-  
-  </div>
+---
 
-###
+## 🚀 Projetos e artigos
+- 🔥 [Desafio DIO Open Source](https://github.com/MathiasFilypeDev/desafio-poo-dio-MathiasFilype) – Exercício prático de POO em Java.  
+- 📌 [O poder da comunicação](https://web.dio.me/articles/o-poder-da-comunicacao-dicas-que-mudarao-sua-forma-de-se-expressar-ef4558c69401) – Artigo sobre habilidades de comunicação.  
+- 🥇⚖️ [A importância de um bom README](https://web.dio.me/articles/a-importancia-de-um-bom-readme-em-seus-projetos-09b347cf1fe8) – Dicas para melhorar a documentação.
 
-<h3>Meus projetos</h3>
+---
 
-🔥 [Desafio DIO Open Source](https://github.com/MathiasFilypeDev/desafio-poo-dio-MathiasFilype) <br>
-📌 [Artigo - O poder da comunicação: dicas que mudarão sua forma de se expressar](https://web.dio.me/articles/o-poder-da-comunicacao-dicas-que-mudarao-sua-forma-de-se-expressar-ef4558c69401?back=/articles) <br>
-🥇⚖️[Artigo - A importância de um bom README em seus projetos](https://web.dio.me/articles/a-importancia-de-um-bom-readme-em-seus-projetos-09b347cf1fe8?back=/articles)
 
-###
-<h3>Linguagens e ferramentas:</h3>
+## Linguagens e ferramentas ⚙️🛠️
 <div>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="60" alt="react logo" title="ReactJs" />
   <img width="12" />
@@ -40,11 +32,11 @@
   <img src="https://skillicons.dev/icons?i=github" height="60" alt="github logo"  title="Github"/>
 </div>
 
-###
+---
 
-<h3>Gráficos de desempenho:</h3>
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=mathiasfilypedev&locale=en&mode=daily&theme=dracula&hide_border=false&border_radius=5&order=3" height="200" alt="streak graph" /> <br>
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=mathiasfilypedev&radius=16&theme=dracula&area=true&order=5" height="300" alt="activity-graph graph"  />
-</div>
+## 📊 Estatísticas
 
+![GitHub Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=MathiasFilypeDev&show_icons=true&theme=dracula)
+![Top Langs](https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=MathiasFilypeDev&layout=compact&langs_count=10&theme=dracula)
+![Streak](https://streak-stats.demolab.com?user=mathiasfilypedev&theme=radical)  
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=mathiasfilypedev&theme=radical&area=true)
