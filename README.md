@@ -36,7 +36,7 @@
 
 <h3>Ranking de linguagens📊</h3>
 
-![Gráfico de linguagens](linguagens.png)
+![Gráfico de linguagens](linguagens.gif)
 
 ###
 
