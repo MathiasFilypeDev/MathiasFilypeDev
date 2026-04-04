@@ -52,5 +52,5 @@ def animate(i):
 ani = animation.FuncAnimation(fig, animate, frames=100, interval=30, repeat=False)
 
 # Salvar como GIF animado
-ani.save("linguagens.gif", writer="pillow")
+ani.save("linguagens.gif", writer="pillow", fps=30)
 print("Animação gerada em linguagens.gif")
