@@ -20,9 +20,8 @@ for repo in repos:
 
 # Linguagens que você realmente trabalha
 linguagens_trabalhadas = {
-    "Python", "JavaScript", "TypeScript", "Java", "HTML", "CSS"
+    "Python", "JavaScript", "React", "Java", "PostgreSQL", "HTML", "CSS", "TypeScript"
 }
-
 # Filtrar apenas essas
 linguagens_filtradas = {lang: bytes for lang, bytes in linguagens.items() if lang in linguagens_trabalhadas}
 
