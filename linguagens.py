@@ -27,7 +27,7 @@ linguagens_filtradas["React"] = linguagens_filtradas.get("JavaScript", 0) + ling
 linguagens_filtradas["PostgreSQL"] = 0  # ajuste manual se quiser somar SQL
 
 # Ordenar pela quantidade
-linguagens_ordenadas = dict(sorted(linguagens_filtradas.items(), key=lambda x: x[1], reverse=True))
+linguagens_ordenadas = dict(sorted(linguagens_filtradas.items(), key=lambda x: x[0], reverse=False))
 
 langs = list(linguagens_ordenadas.keys())
 values = list(linguagens_ordenadas.values())
