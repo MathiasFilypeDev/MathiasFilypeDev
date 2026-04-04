@@ -20,7 +20,6 @@ for repo in repos:
 
 # Linguagens que você realmente trabalha
 linguagens_trabalhadas = {"Python", "JavaScript", "TypeScript", "Java", "HTML", "CSS"}
-
 linguagens_filtradas = {lang: bytes for lang, bytes in linguagens.items() if lang in linguagens_trabalhadas}
 
 # Adicionar React e PostgreSQL como categorias extras
@@ -32,23 +31,23 @@ total = sum(linguagens_filtradas.values())
 linguagens_percentuais = {lang: (val/total*100 if total > 0 else 0) for lang, val in linguagens_filtradas.items()}
 linguagens_ordenadas = dict(sorted(linguagens_percentuais.items(), key=lambda x: x[1], reverse=True))
 
-# Preparar gráfico
-fig, ax = plt.subplots(figsize=(10,4))
+# Preparar gráfico horizontal
+fig, ax = plt.subplots(figsize=(8,5))
 langs = list(linguagens_ordenadas.keys())
 values = list(linguagens_ordenadas.values())
-bars = ax.bar(langs, [0]*len(values), color="skyblue")
+bars = ax.barh(langs, [0]*len(values), color="skyblue")
 
-ax.set_xlabel("Linguagens e Ferramentas")
-ax.set_ylabel("Uso (%)")
+ax.set_xlabel("Uso (%)")
 ax.set_title("Tecnologias que utilizo nos meus repositórios")
-plt.xticks(rotation=45)
 
 # Função de animação: cresce barra por barra
 def animate(i):
     for idx, bar in enumerate(bars):
         if i >= idx*10:  # cada barra começa em um frame diferente
             progress = min((i-idx*10)/10, 1)
-            bar.set_height(values[idx] * progress)
+            bar.set_width(values[idx] * progress)
+            ax.text(bar.get_width()+1, bar.get_y()+bar.get_height()/2,
+                    f"{values[idx]:.1f}%", va='center')
 
 ani = animation.FuncAnimation(fig, animate, frames=len(values)*20, interval=50, repeat=False)
 ani.save("linguagens.gif", writer="pillow", fps=30)
