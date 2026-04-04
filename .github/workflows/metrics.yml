@@ -1,0 +1,18 @@
+name: Metrics
+
+on:
+  schedule: 
+    - cron: "0 0 * * *" # roda todo dia
+  workflow_dispatch: # permite rodar manualmente
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.PAT_1 }}
+          user: MathiasFilypeDev
+          template: classic
+          base: header, languages
+          config_timezone: America/Sao_Paulo
