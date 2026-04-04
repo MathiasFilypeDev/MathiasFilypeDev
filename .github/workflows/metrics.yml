@@ -23,17 +23,17 @@ jobs:
           plugin_languages_sections: most-used, recently-used
           plugin_languages_indepth: yes
 
-          # Contribuições e commits
-          plugin_contributions: yes
-          plugin_contributions_sections: repositories, commits
-
-          # Seguidores
+          # Seguidores e follow-up
           plugin_followup: yes
+          plugin_followup_sections: repositories, user
 
           # Estrelas recebidas
           plugin_stargazers: yes
+          plugin_stargazers_charts: yes
+          plugin_stargazers_charts_type: classic
 
-          # Tempo de codificação (precisa do WakaTime)
-          plugin_wakatime: yes
-          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
-          plugin_wakatime_sections: time, languages, editors, projects
+          # Hábitos de contribuição
+          plugin_habits: yes
+          plugin_habits_days: 30
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
