@@ -28,9 +28,9 @@ linguagens_filtradas["React"] = linguagens_filtradas.get("JavaScript", 0) + ling
 linguagens_filtradas["PostgreSQL"] = 0  # ajuste manual se quiser somar SQL
 
 # Ordenar
-linguagens_ordenadas = dict(sorted(linguagens_filtradas.items(), key=lambda x: x[1], reverse=True))
+linguagens_ordenadas = dict(sorted(linguagens_filtradas.items(), key=lambda x: x[1]))
 
-fig, ax = plt.subplots(figsize=(10,4))
+fig, ax = plt.subplots(figsize=(7,3))
 langs = list(linguagens_ordenadas.keys())
 values = list(linguagens_ordenadas.values())
 bars = ax.bar(langs, [0]*len(values), color="skyblue")
