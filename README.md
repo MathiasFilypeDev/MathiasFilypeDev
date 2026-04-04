@@ -37,6 +37,6 @@ Atualmente estudando **React** e boas práticas de desenvolvimento.
 ## 📊 Estatísticas
 
 ![GitHub Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=MathiasFilypeDev&show_icons=true&theme=dracula)
-![Top Langs](https://github.com/MathiasFilypeDev/MathiasFilypeDev/blob/main/generated/languages.svg)
+![Metrics](https://github.com/MathiasFilypeDev/MathiasFilypeDev/blob/main/metrics.svg)
 ![Streak](https://streak-stats.demolab.com?user=mathiasfilypedev&theme=radical)  
 ![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=mathiasfilypedev&theme=radical&area=true)
