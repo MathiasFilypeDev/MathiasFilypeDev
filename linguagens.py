@@ -19,20 +19,17 @@ for repo in repos:
     linguagens.update(langs)
 
 # Linguagens que você realmente trabalha
-linguagens_trabalhadas = {
-    "Python", "JavaScript", "React", "Java", "PostgreSQL", "HTML", "CSS", "TypeScript"
-}
-# Filtrar apenas essas
+linguagens_trabalhadas = {"Python", "JavaScript", "TypeScript", "Java", "HTML", "CSS"}
+
 linguagens_filtradas = {lang: bytes for lang, bytes in linguagens.items() if lang in linguagens_trabalhadas}
 
-# Adicionar manualmente React e PostgreSQL como categorias extras
+# Adicionar React e PostgreSQL como categorias extras
 linguagens_filtradas["React"] = linguagens_filtradas.get("JavaScript", 0) + linguagens_filtradas.get("TypeScript", 0)
-linguagens_filtradas["PostgreSQL"] = 0  # pode ajustar se tiver dados SQL
+linguagens_filtradas["PostgreSQL"] = 0  # ajuste manual se quiser somar SQL
 
-# Ordenar da mais usada para a menos usada
+# Ordenar
 linguagens_ordenadas = dict(sorted(linguagens_filtradas.items(), key=lambda x: x[1], reverse=True))
 
-# Preparar gráfico
 fig, ax = plt.subplots(figsize=(10,4))
 langs = list(linguagens_ordenadas.keys())
 values = list(linguagens_ordenadas.values())
@@ -43,13 +40,11 @@ ax.set_ylabel("Bytes de código")
 ax.set_title("Tecnologias que utilizo nos meus repositórios")
 plt.xticks(rotation=45)
 
-# Função de animação
 def animate(i):
     for bar, val in zip(bars, values):
         bar.set_height(val * i / 100)
 
 ani = animation.FuncAnimation(fig, animate, frames=100, interval=30, repeat=False)
-
-# Salvar como GIF animado
 ani.save("linguagens.gif", writer="pillow", fps=30)
-print("Animação gerada em linguagens.gif")
+
+print("GIF animado gerado em linguagens.gif")
