@@ -1,0 +1,27 @@
+name: Generate Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # roda todo dia à meia-noite
+  workflow_dispatch: # permite rodar manualmente
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Generate GitHub Stats
+        uses: anuraghazra/github-readme-stats@master
+        env:
+          PAT_1: ${{ secrets.PAT_1 }}
+          USERNAME: MathiasFilypeDev
+
+      - name: Commit Stats
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update stats"
+          git push
