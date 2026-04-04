@@ -34,12 +34,6 @@
 
 ###
 
-<h3>Ranking de linguagens📊</h3>
-
-![Gráfico de linguagens](linguagens.gif)
-
-###
-
 <h3>Gráficos de desempenho:</h3>
 <div align="center">
   <img src="https://streak-stats.demolab.com?user=mathiasfilypedev&locale=en&mode=daily&theme=dracula&hide_border=false&border_radius=5&order=3" height="200" alt="streak graph" /> <br>
