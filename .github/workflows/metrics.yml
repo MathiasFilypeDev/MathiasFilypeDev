@@ -14,5 +14,26 @@ jobs:
           token: ${{ secrets.PAT_1 }}
           user: MathiasFilypeDev
           template: classic
-          base: header, languages
+          base: header, activity, community, repositories, metadata
           config_timezone: America/Sao_Paulo
+
+          # Linguagens
+          plugin_languages: yes
+          plugin_languages_limit: 10
+          plugin_languages_sections: most-used, recently-used
+          plugin_languages_indepth: yes
+
+          # Contribuições e commits
+          plugin_contributions: yes
+          plugin_contributions_sections: repositories, commits
+
+          # Seguidores
+          plugin_followup: yes
+
+          # Estrelas recebidas
+          plugin_stargazers: yes
+
+          # Tempo de codificação (precisa do WakaTime)
+          plugin_wakatime: yes
+          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
+          plugin_wakatime_sections: time, languages, editors, projects
