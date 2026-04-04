@@ -12,6 +12,14 @@
 
 ###
 
+<div>
+    
+  [Linkedin Profile](www.linkedin.com/in/mathias-filype-366195246) [Dev.to](https://dev.to/mathiasfilypedev) [Medium](https://medium.com/@MathiasFilypeDev)
+  
+  </div>
+
+###
+
 <h3>Meus projetos</h3>
 
 🔥 [Desafio DIO Open Source](https://github.com/MathiasFilypeDev/desafio-poo-dio-MathiasFilype) <br>
