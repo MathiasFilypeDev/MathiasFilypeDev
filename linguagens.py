@@ -1,5 +1,6 @@
 import requests
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 from collections import Counter
 import os
 
@@ -17,30 +18,39 @@ for repo in repos:
     langs = requests.get(lang_url, headers=headers).json()
     linguagens.update(langs)
 
-# Defina aqui as linguagens/ferramentas que você realmente usa
+# Linguagens que você realmente trabalha
 linguagens_trabalhadas = {
-    "Python", "JavaScript", "C#", "C++", "HTML", "CSS", "TypeScript"
+    "Python", "JavaScript", "TypeScript", "Java", "HTML", "CSS"
 }
 
-# Filtrar apenas essas linguagens
-linguagens_filtradas = {
-    lang: bytes for lang, bytes in linguagens.items() if lang in linguagens_trabalhadas
-}
+# Filtrar apenas essas
+linguagens_filtradas = {lang: bytes for lang, bytes in linguagens.items() if lang in linguagens_trabalhadas}
+
+# Adicionar manualmente React e PostgreSQL como categorias extras
+linguagens_filtradas["React"] = linguagens_filtradas.get("JavaScript", 0) + linguagens_filtradas.get("TypeScript", 0)
+linguagens_filtradas["PostgreSQL"] = 0  # pode ajustar se tiver dados SQL
 
 # Ordenar da mais usada para a menos usada
 linguagens_ordenadas = dict(sorted(linguagens_filtradas.items(), key=lambda x: x[1], reverse=True))
 
-# Gráfico mais baixo e só com as linguagens filtradas
-if linguagens_ordenadas:
-    plt.figure(figsize=(10,4))  # largura 10, altura 4
-    plt.bar(linguagens_ordenadas.keys(), linguagens_ordenadas.values(), color="skyblue")
-    plt.xlabel("Linguagens")
-    plt.ylabel("Bytes de código")
-    plt.title("Linguagens que utilizo nos meus repositórios")
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.savefig("linguagens.png")
+# Preparar gráfico
+fig, ax = plt.subplots(figsize=(10,4))
+langs = list(linguagens_ordenadas.keys())
+values = list(linguagens_ordenadas.values())
+bars = ax.bar(langs, [0]*len(values), color="skyblue")
 
-    print("Gráfico atualizado com as linguagens que você realmente usa.")
-else:
-    print("Nenhuma das linguagens selecionadas foi encontrada nos repositórios.")
+ax.set_xlabel("Linguagens e Ferramentas")
+ax.set_ylabel("Bytes de código")
+ax.set_title("Tecnologias que utilizo nos meus repositórios")
+plt.xticks(rotation=45)
+
+# Função de animação
+def animate(i):
+    for bar, val in zip(bars, values):
+        bar.set_height(val * i / 100)
+
+ani = animation.FuncAnimation(fig, animate, frames=100, interval=30, repeat=False)
+
+# Salvar como GIF animado
+ani.save("linguagens.gif", writer="pillow")
+print("Animação gerada em linguagens.gif")
