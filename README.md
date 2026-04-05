@@ -1,12 +1,16 @@
 # 👋 Bem-vindo ao meu portfólio 📚💻⚙️
 
-## Sobre mim
-Sou Mathias, desenvolvedor focado em **front-end** e apaixonado por tecnologia.  
-Atualmente estudando **React** e boas práticas de desenvolvimento.
+
+## ✨ Sobre mim  
+Sou **Mathias**, desenvolvedor focado em **front-end** e apaixonado por tecnologia.  
+Atualmente estudando **React**, **boas práticas de desenvolvimento** e explorando novas ferramentas para criar interfaces modernas e intuitivas.  
+
+🎯 **Missão:** Transformar ideias em experiências digitais envolventes.  
+📌 **Objetivo:** Evoluir constantemente como desenvolvedor e contribuir para projetos que impactem positivamente pessoas e negócios.  
 
 ---
 
-## 🌐 Social
+## 🌐 Conecte-se comigo
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/mathias-filype-366195246)
 [![Dev.to](https://img.shields.io/badge/Dev.to-black?style=for-the-badge&logo=dev.to)](https://dev.to/mathiasfilypedev)
 [![Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium)](https://medium.com/@MathiasFilypeDev)
@@ -15,11 +19,18 @@ Atualmente estudando **React** e boas práticas de desenvolvimento.
 
 ---
 
-## 🚀 Projetos e artigos
-- 🔥 [Desafio Open Source DIO](https://github.com/MathiasFilypeDev/dio-lab-open-source) – Contribuição em projeto open source, praticando GitHub Flow.
-- 📌 [O poder da comunicação](https://web.dio.me/articles/o-poder-da-comunicacao-dicas-que-mudarao-sua-forma-de-se-expressar-ef4558c69401) – Artigo sobre habilidades de comunicação.
-- 🥇⚖️ [A importância de um bom README](https://web.dio.me/articles/a-importancia-de-um-bom-readme-em-seus-projetos-09b347cf1fe8) – Dicas para melhorar a documentação.
-- 📚💡[Fundamentos de React (Avanti)](https://github.com/MathiasFilypeDev/estudos-frontend) - Nesse projeto explorei sobre sintaxe, UI components, React Hoooks(useState, useEffect, useContext), Fetch API, e boas práticas de código limpo, qualidade e vida útil do código. 
+## 🚀 Projetos em destaque  
+- 🔥 [Desafio Open Source DIO](https://github.com/MathiasFilypeDev/dio-lab-open-source)  
+  *Contribuição em projeto open source, praticando GitHub Flow.*  
+
+- 📌 [O poder da comunicação](https://web.dio.me/articles/o-poder-da-comunicacao-dicas-que-mudarao-sua-forma-de-se-expressar-ef4558c69401)  
+  *Artigo sobre habilidades de comunicação.*  
+
+- 🥇⚖️ [A importância de um bom README](https://web.dio.me/articles/a-importancia-de-um-bom-readme-em-seus-projetos-09b347cf1fe8)  
+  *Dicas para melhorar a documentação.*  
+
+- 📚💡 [Fundamentos de React (Avanti)](https://github.com/MathiasFilypeDev/estudos-frontend)  
+  *Exploração de sintaxe, UI components, React Hooks (useState, useEffect, useContext), Fetch API e boas práticas de código limpo.*  
 
 ---
 
@@ -33,6 +44,7 @@ Atualmente estudando **React** e boas práticas de desenvolvimento.
 ---
 
 ## 📊 Estatísticas
-![GitHub Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=MathiasFilypeDev&show_icons=true&theme=dracula)
-![Streak](https://streak-stats.demolab.com?user=mathiasfilypedev&theme=radical)
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=mathiasfilypedev&theme=radical&area=true)
+
+![GitHub Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=MathiasFilypeDev&show_icons=true&theme=dracula)  
+![Streak](https://streak-stats.demolab.com?user=mathiasfilypedev&theme=radical)  
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=mathiasfilypedev&theme=radical&area=true)  
