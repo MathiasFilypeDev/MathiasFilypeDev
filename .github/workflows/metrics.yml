@@ -2,8 +2,8 @@ name: Metrics
 
 on:
   schedule:
-    - cron: "0 0 * * *" # roda todo dia à meia-noite
-  workflow_dispatch: # permite rodar manualmente
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
   github-metrics:
@@ -14,26 +14,11 @@ jobs:
           token: ${{ secrets.PAT_1 }}
           user: MathiasFilypeDev
           template: classic
-          base: header, activity, community, repositories, metadata
+          base: header, repositories
           config_timezone: America/Sao_Paulo
 
           # Linguagens
           plugin_languages: yes
-          plugin_languages_limit: 10
-          plugin_languages_sections: most-used, recently-used
+          plugin_languages_limit: 8
+          plugin_languages_sections: most-used
           plugin_languages_indepth: yes
-
-          # Seguidores e follow-up
-          plugin_followup: yes
-          plugin_followup_sections: repositories, user
-
-          # Estrelas recebidas
-          plugin_stargazers: yes
-          plugin_stargazers_charts: yes
-          plugin_stargazers_charts_type: classic
-
-          # Hábitos de contribuição
-          plugin_habits: yes
-          plugin_habits_days: 30
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
