@@ -15,7 +15,7 @@ jobs:
           user: MathiasFilypeDev
           template: classic
           base: header, repositories
-          config_timezone: America/Sao_Paulo
+          config_timezone: Triunfo/Paraiba
 
           # Linguagens
           plugin_languages: yes
