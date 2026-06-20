@@ -31,9 +31,10 @@ Atualmente estudando **React**, **boas práticas de desenvolvimento** e exploran
 
 - 📚💡 [Fundamentos de React (Avanti)](https://github.com/MathiasFilypeDev/estudos-frontend)  
   *Exploração de sintaxe, UI components, React Hooks (useState, useEffect, useContext), Fetch API e boas práticas de código limpo.*  
-- 📚💡🚀 [Desafio Movitalent](thttps://github.com/MathiasFilypeDev/reuseMais) - Site proposto para realizar o desafio com frontend e backend. (HTML, CSS (Bootstrap), Javascript, json, DotNet) 
+- 📚💡🚀 [Desafio Movitalent (site ReuseMais)](https://github.com/MathiasFilypeDev/reuseMais)
+  * Site proposto para realizar o desafio com frontend e backend. (HTML, CSS (Bootstrap), Javascript, json, DotNet).* 
 ---
-
+ 
 ## ⚙️ Linguagens e ferramentas
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
